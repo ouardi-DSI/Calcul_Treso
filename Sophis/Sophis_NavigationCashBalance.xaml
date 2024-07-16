@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153,3298</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153,3357</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sophis_NavigationCashBalance_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -88,16 +88,12 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sophis_NavigationCashBalance" sap:VirtualizedContainerService.HintSize="610,3233" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sophis_NavigationCashBalance" sap:VirtualizedContainerService.HintSize="610,3292" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Sophis_NavigationCashBalance" Name="Workflow_Name" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="CashDetails_Existe" />
       <Variable x:TypeArguments="x:Boolean" Name="Cash_Existe" />
-      <Variable x:TypeArguments="x:Boolean" Name="texte_ZoneExiste">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="texte_ZoneExiste" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -110,7 +106,7 @@
         <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not Cash_Existe]" DisplayName="While" sap:VirtualizedContainerService.HintSize="548,436" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not Cash_Existe]" DisplayName="While" sap:VirtualizedContainerService.HintSize="548,396" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
       <ui:InterruptibleWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -136,14 +132,36 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleWhile>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="548,927" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not texte_ZoneExiste]" DisplayName="While" sap:VirtualizedContainerService.HintSize="548,1026" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,689" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,828" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="3000" DisplayName="Click 'page tab  Portfolio'" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="Ctrl" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e3ed1ea5-38f1-4fa7-94ee-baf5b936401f" InformativeScreenshot="8cee06296a2e15885930c85202f1959e" Selector="&lt;wnd app='sophisvalue.exe' cls='Afx:*' title='Fusion Invest 21.3.35 *' /&gt;&lt;wnd cls='Afx:*' title='Fusion Invest 21.3.35' /&gt;&lt;ctrl name='Quick Access Toolbar' role='tool bar' /&gt;&lt;ctrl name='Detailed Cash Balance' role='push button' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
           <ui:UiElementExists DisplayName="Element Exists" Exists="[texte_ZoneExiste]" sap:VirtualizedContainerService.HintSize="450,119" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="761baaa7-bc55-4152-a270-925bd6a0c15f" Selector="&lt;wnd app='sophisvalue.exe' cls='#32770' title='Options' /&gt;&lt;wnd ctrlid='101' /&gt;" TimeoutMS="5000">
@@ -197,9 +215,6 @@
           </If>
         </Sequence>
       </ui:InterruptibleWhile.Body>
-      <ui:InterruptibleWhile.Condition>
-        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="not texte_ZoneExiste" />
-      </ui:InterruptibleWhile.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
