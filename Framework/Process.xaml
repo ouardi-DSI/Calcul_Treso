@@ -147,7 +147,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="608,4903" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1530,2263" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Process" Name="Workflow_Name" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_Tresorerie" />
@@ -164,71 +164,70 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logs\Log_Debut.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Logs\Log_Debut.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logs\Log_Debut.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="470,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Logs\Log_Debut.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_Workflow_name">[Workflow_Name]</InArgument>
         <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Calcul_Treso_DateForce" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="546,183" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Calcul_Treso_DateForce" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="470,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:Boolean">[DateForce]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
-    <If Condition="[DateForce]" sap:VirtualizedContainerService.HintSize="546,4271" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[DateForce]" sap:VirtualizedContainerService.HintSize="470,1648" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,3290" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,743" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Calcul_Treso_Date" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="450,183" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Calcul_Treso_Date" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
             <ui:GetRobotAsset.Value>
               <OutArgument x:TypeArguments="x:String">[Date_Treso]</OutArgument>
             </ui:GetRobotAsset.Value>
           </ui:GetRobotAsset>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-              </InOutArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Date">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Date_Treso" />
-              </InArgument>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_ActifNet">
-                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_ActifNet" />
-              </OutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Date">[Date_Treso]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_ActifNet">[DT_ActifNet]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Assign sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[ActifNonNul]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:Boolean">[DT_ActifNet.AsEnumerable().Any(Function(x) not Double.Parse(x("ACTIF_NET").ToString).Equals (0))]</InArgument>
             </Assign.Value>
-          </Assign>
-          <If Condition="[ActifNonNul]" sap:VirtualizedContainerService.HintSize="450,2530" sap2010:WorkflowViewState.IdRef="If_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <If Condition="[ActifNonNul]" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="If_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,2252" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_NavigationPortfolio.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,65" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Sophis\Sophis_NavigationPortfolio.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_NavigationPortfolio.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Sophis\Sophis_NavigationPortfolio.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -237,7 +236,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,65" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                   <ui:CommentOut.Body>
                     <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <sap:WorkflowViewStateService.ViewState>
@@ -260,14 +259,10 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_SelectionGlobalContext.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Sophis\Sophis_SelectionGlobalContext.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_SelectionGlobalContext.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Sophis\Sophis_SelectionGlobalContext.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Context">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Context_Global&quot;).ToString" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Context">[in_Config("Context_Global").ToString]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -276,11 +271,9 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_CalculateInstruments.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Sophis\Sophis_CalculateInstruments.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_CalculateInstruments.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Sophis\Sophis_CalculateInstruments.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -289,45 +282,31 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_LoadPositions.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Sophis\Sophis_LoadPositions.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_LoadPositions.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Sophis\Sophis_LoadPositions.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_ChargementPositions.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Sophis\Sophis_ChargementPositions.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_ChargementPositions.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Sophis\Sophis_ChargementPositions.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_NavigationCashBalance.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Sophis\Sophis_NavigationCashBalance.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_NavigationCashBalance.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Sophis\Sophis_NavigationCashBalance.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_DateForce">
-                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="DateForce" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_DateForce">[DateForce]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_CHeckDataDispalyBalance.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Sophis\Sophis_CHeckDataDispalyBalance.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_CHeckDataDispalyBalance.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Sophis\Sophis_CHeckDataDispalyBalance.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_ExtractionTresorerie.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Sophis\Sophis_ExtractionTresorerie.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_Tresorie">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </OutArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_Tresorie">[DT_Tresorerie]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Mapping_Fonds_ActifNet.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Traitement\Mapping_Fonds_ActifNet.xaml">
@@ -339,97 +318,47 @@
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Filtre_TresorerieSophis.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Traitement\Filtre_TresorerieSophis.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </InOutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_ColonneTresorerie">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="ColonneTresorerie" />
-                    </OutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_date">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Date_Treso" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">[DT_Tresorerie]</InOutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_ColonneTresorerie">[ColonneTresorerie]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_date">[Date_Treso]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Ajout_Ligne_Limite_RespectLimite.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Traitement\Ajout_Ligne_Limite_RespectLimite.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </InOutArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT">[DT_Tresorerie]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Remplissage_Colonne_Limite_respect.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Traitement\Remplissage_Colonne_Limite_respect.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_PremiereLimiteConstante">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_PremiereLimiteConstante" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Min">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SecondeLimite_Min" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Max">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SecondeLimite_Max" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimiteConstante">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SecondeLimiteConstante" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColonneTresorerie">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ColonneTresorerie" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">[DT_Tresorerie]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PremiereLimiteConstante">[in_PremiereLimiteConstante]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Min">[in_SecondeLimite_Min]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Max">[in_SecondeLimite_Max]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimiteConstante">[in_SecondeLimiteConstante]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColonneTresorerie">[ColonneTresorerie]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Creation_FichierNivellement.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Traitement\Creation_FichierNivellement.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Annee">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Date_Treso.Split(&quot;/&quot;c)(2)" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Mois">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Date_Treso.Split(&quot;/&quot;c)(1)" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Jour">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Date_Treso.Split(&quot;/&quot;c)(0)" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FolderProject">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FolderProject" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_FilePath">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="FilePath" />
-                    </OutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_TemplatePath">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TemplatePath" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_date">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Date_Treso" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Annee">[Date_Treso.Split("/"c)(2)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Mois">[Date_Treso.Split("/"c)(1)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Jour">[Date_Treso.Split("/"c)(0)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FolderProject">[in_FolderProject]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_FilePath">[FilePath]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_TemplatePath">[in_TemplatePath]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_date">[Date_Treso]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Remplissage_FichierNivellement_Date_Type_Level_MultiSelection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Traitement\Remplissage_FichierNivellement_Date_Type_Level_MultiSelection.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilePath" />
-                    </InArgument>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Feuille">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FeuilleNivellement" />
-                    </InArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[FilePath]</InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Feuille">[in_FeuilleNivellement]</InArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT">[DT_Tresorerie]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <If Condition="[datetime.ParseExact(Date_Treso,&quot;dd/MM/yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture).DayOfWeek.ToString.Equals(&quot;Monday&quot;)]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="If_6">
@@ -448,24 +377,12 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\Envoie_Mail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_42" UnSafe="False" WorkflowFileName="Mail\Envoie_Mail.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                          </InOutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Mail" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Subject_Mail&quot;).ToString.Replace(&quot;[Date]&quot;,datetime.ParseExact(Date_Treso,&quot;dd/MM/yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture).AddDays(-3).ToString(&quot;dd/MM/yyyy&quot;))" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailBody">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Corps_Mail&quot;).ToString.Replace(&quot;[Date]&quot;,datetime.ParseExact(Date_Treso,&quot;dd/MM/yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture).AddDays(-3).ToString(&quot;dd/MM/yyyy&quot;))" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_attachment">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailCC">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Mail_CC&quot;).ToString" />
-                          </InArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">[in_Mail]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">[in_Config("Subject_Mail").ToString.Replace("[Date]",datetime.ParseExact(Date_Treso,"dd/MM/yyyy",System.Globalization.CultureInfo.InvariantCulture).AddDays(-3).ToString("dd/MM/yyyy"))]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailBody">[in_Config("Corps_Mail").ToString.Replace("[Date]",datetime.ParseExact(Date_Treso,"dd/MM/yyyy",System.Globalization.CultureInfo.InvariantCulture).AddDays(-3).ToString("dd/MM/yyyy"))]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_attachment">[FilePath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailCC">[in_Config("Mail_CC").ToString]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -479,24 +396,12 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\Envoie_Mail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Mail\Envoie_Mail.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                          </InOutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Mail" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Subject_Mail&quot;).ToString.Replace(&quot;[Date]&quot;,datetime.ParseExact(Date_Treso,&quot;dd/MM/yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture).AddDays(-1).ToString(&quot;dd/MM/yyyy&quot;))" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailBody">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Corps_Mail&quot;).ToString.Replace(&quot;[Date]&quot;,datetime.ParseExact(Date_Treso,&quot;dd/MM/yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture).AddDays(-1).ToString(&quot;dd/MM/yyyy&quot;))" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_attachment">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_MailCC">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Mail_CC&quot;).ToString" />
-                          </InArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">[in_Mail]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">[in_Config("Subject_Mail").ToString.Replace("[Date]",datetime.ParseExact(Date_Treso,"dd/MM/yyyy",System.Globalization.CultureInfo.InvariantCulture).AddDays(-1).ToString("dd/MM/yyyy"))]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailBody">[in_Config("Corps_Mail").ToString.Replace("[Date]",datetime.ParseExact(Date_Treso,"dd/MM/yyyy",System.Globalization.CultureInfo.InvariantCulture).AddDays(-1).ToString("dd/MM/yyyy"))]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_attachment">[FilePath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_MailCC">[in_Config("Mail_CC").ToString]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -505,7 +410,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -515,31 +420,26 @@
               </Sequence>
             </If.Else>
           </If>
-          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Calcul_Treso_DateForce" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="450,217" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[False]" />
+          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Calcul_Treso_DateForce" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="434,217" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[False]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,803" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,767" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="450,132" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml">
+          <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Traitement_BaseDonnees\BD_RecuperaptionActifNet.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-              </InOutArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Date">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="now.ToString(&quot;dd/MM/yyyy&quot;)" />
-              </InArgument>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_ActifNet">
-                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_ActifNet" />
-              </OutArgument>
+              <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Date">[now.ToString("dd/MM/yyyy")]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_ActifNet">[DT_ActifNet]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Assign sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[ActifNonNul]</OutArgument>
             </Assign.To>
@@ -547,7 +447,7 @@
               <InArgument x:TypeArguments="x:Boolean">[DT_ActifNet.AsEnumerable().Any(Function(x) not Double.Parse(x("ACTIF_NET").ToString).Equals (0))]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[ActifNonNul]" sap:VirtualizedContainerService.HintSize="450,311" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[ActifNonNul]" sap:VirtualizedContainerService.HintSize="434,243" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -555,7 +455,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,22" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -631,12 +531,8 @@
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_NavigationCashBalance.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Sophis\Sophis_NavigationCashBalance.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_DateForce">
-                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="DateForce" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_DateForce">[DateForce]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sophis\Sophis_CHeckDataDispalyBalance.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Sophis\Sophis_CHeckDataDispalyBalance.xaml">
@@ -659,18 +555,10 @@
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Filtre_TresorerieSophis.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Traitement\Filtre_TresorerieSophis.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </InOutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_ColonneTresorerie">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="ColonneTresorerie" />
-                    </OutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_date">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Now.ToString(&quot;dd/MM/yyyy&quot;)" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">[DT_Tresorerie]</InOutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_ColonneTresorerie">[ColonneTresorerie]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_date">[Now.ToString("dd/MM/yyyy")]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Ajout_Ligne_Limite_RespectLimite.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Traitement\Ajout_Ligne_Limite_RespectLimite.xaml">
@@ -681,71 +569,33 @@
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Remplissage_Colonne_Limite_respect.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Traitement\Remplissage_Colonne_Limite_respect.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_PremiereLimiteConstante">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_PremiereLimiteConstante" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Min">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SecondeLimite_Min" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Max">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SecondeLimite_Max" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimiteConstante">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SecondeLimiteConstante" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ColonneTresorerie">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ColonneTresorerie" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_Tresorerie">[DT_Tresorerie]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_PremiereLimiteConstante">[in_PremiereLimiteConstante]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Min">[in_SecondeLimite_Min]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimite_Max">[in_SecondeLimite_Max]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SecondeLimiteConstante">[in_SecondeLimiteConstante]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ColonneTresorerie">[ColonneTresorerie]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Creation_FichierNivellement.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Traitement\Creation_FichierNivellement.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Annee">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="now.ToString(&quot;dd/MM/yyyy&quot;).Split(&quot;/&quot;c)(2)" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Mois">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="now.ToString(&quot;dd/MM/yyyy&quot;).Split(&quot;/&quot;c)(1)" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Jour">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="now.ToString(&quot;dd/MM/yyyy&quot;).Split(&quot;/&quot;c)(0)" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FolderProject">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FolderProject" />
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="out_FilePath">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="FilePath" />
-                    </OutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_TemplatePath">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TemplatePath" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_date">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="now.tostring(&quot;dd/MM/yyyy&quot;)" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Annee">[now.ToString("dd/MM/yyyy").Split("/"c)(2)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Mois">[now.ToString("dd/MM/yyyy").Split("/"c)(1)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Jour">[now.ToString("dd/MM/yyyy").Split("/"c)(0)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FolderProject">[in_FolderProject]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_FilePath">[FilePath]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_TemplatePath">[in_TemplatePath]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_date">[now.tostring("dd/MM/yyyy")]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Traitement\Remplissage_FichierNivellement_Date_Type_Level_MultiSelection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,153" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Traitement\Remplissage_FichierNivellement_Date_Type_Level_MultiSelection.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FilePath" />
-                    </InArgument>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">
-                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_StepWorkflow" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Feuille">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FeuilleNivellement" />
-                    </InArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT">
-                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_Tresorerie" />
-                    </InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[FilePath]</InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Feuille">[in_FeuilleNivellement]</InArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT">[DT_Tresorerie]</InOutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <If Condition="[Now.DayOfWeek.ToString.Equals(&quot;Monday&quot;)]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="If_3">
@@ -797,7 +647,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -810,7 +660,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logs\Log_Fin.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Logs\Log_Fin.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Logs\Log_Fin.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="470,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Logs\Log_Fin.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_Workflow_name">[Workflow_Name]</InArgument>
         <InOutArgument x:TypeArguments="x:String" x:Key="io_StepWorkflow">[io_StepWorkflow]</InOutArgument>

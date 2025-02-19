@@ -1,21 +1,21 @@
 {
-  "name": "Calcul_Treso",
-  "projectId": "0e7f337a-81fb-4e7f-9d4a-70a62cf8de9e",
+  "name": "BKG_NivellementTresorerie",
+  "projectId": "0414e2c4-99cb-4e95-b81f-2b50897d2b59",
   "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.7.1]",
-    "UiPath.Excel.Activities": "[2.23.2-preview]",
-    "UiPath.Mail.Activities": "[1.22.1]",
-    "UiPath.System.Activities": "[23.4.2]",
-    "UiPath.Testing.Activities": "[24.2.0-preview]",
-    "UiPath.UIAutomation.Activities": "[24.2.0-preview]"
+    "UiPath.Excel.Activities": "[2.24.4]",
+    "UiPath.Mail.Activities": "[1.24.11]",
+    "UiPath.System.Activities": "[24.10.7]",
+    "UiPath.Testing.Activities": "[24.10.3]",
+    "UiPath.UIAutomation.Activities": "[24.12.1-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
-  "studioVersion": "24.2.1.0",
-  "projectVersion": "1.0.49",
+  "studioVersion": "25.0.157.0",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -47,42 +47,42 @@
     "fileInfoCollection": [
       {
         "editingStatus": "InProgress",
-        "testCaseId": "85c132e1-c960-4a0e-8274-ea9a9a2b9f8b",
+        "testCaseId": "ba6b6e1e-e941-4b5e-ba44-283213635e36",
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\GetTransactionDataTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "e8120f15-20b2-476f-b7af-ef0418043d5e",
+        "testCaseId": "c2c08757-4058-4986-8775-6c7b0f640c70",
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "e91f4e74-1a93-418c-89ee-d9b14806cff5",
+        "testCaseId": "e88964e6-6119-4c47-8bd6-27cc0165615c",
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\InitAllSettingsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "dcc0a592-04d1-40f3-8eca-fc3e05d6928e",
+        "testCaseId": "aa93370f-272a-464e-b7ab-20f576aea16d",
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\MainTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "ce846cbb-841d-4341-9172-75530d3f7006",
+        "testCaseId": "11b7754f-2f76-40a8-a638-14beace2244f",
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\ProcessTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
-        "testCaseId": "a91c69ed-48fe-4ad4-b8dc-581d9fcba7b4",
+        "testCaseId": "2406cbf6-3318-478b-8b45-96075d4b8ec1",
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
@@ -94,7 +94,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "b3fda198-8868-4d8f-a3c4-8e093c1a4dcd",
+      "uniqueId": "5b44ec2e-d3ba-4491-87db-2b9e72ea937d",
       "input": [],
       "output": []
     }
